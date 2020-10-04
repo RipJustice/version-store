@@ -1,0 +1,34 @@
+<div class="ss-header">
+  <h1>Steve's Software Version Search</h1>
+</div>
+<div class="ss-page">
+  <div class="ss-search-block">
+    <div class="ss-instructions">
+      <h2>Please enter a version number to start your search</h2>
+      <p>Versions match the following format: "[major version].[minor version].[patch]". An example version would be "2.2.1". You may also enter a partial version number, such as "2" or "2.1"</p>
+    </div>
+    <div class="ss-input">
+      <input #versionInput>
+      <button (click)="generateList(versionInput.value)">Search</button>
+    </div>
+    <div class="ss-output">
+      <ng-container *ngIf="error">
+        <span class="ss-error">Please Type in a valid Version Number</span>
+      </ng-container>
+      <ng-container *ngIf="!error && versionInput.value && !returnedVersions.length">
+        <span class="ss-no-results">No results found</span>
+      </ng-container>
+      <ng-container *ngIf="returnedVersions.length">
+        <div class="ss-grid">
+          <span class="ss-grid-title">Name</span>
+          <span class="ss-grid-title">Version</span>
+          <ng-container *ngFor="let software of returnedVersions">
+            <span class="ss-grid-item">{{ software.name }}</span>
+            <span class="ss-grid-item">{{ software.version }}</span>
+          </ng-container>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+

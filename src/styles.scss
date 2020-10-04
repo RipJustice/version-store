@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+.ss-header {
+  background-color: #1f7fec;
+  padding: 20px 35px;
+  color: #fff;
+  h1 {
+    margin: 0;
+    font-size: 25px;
+    text-transform: uppercase;
+  }
+}
+.ss-page {
+  min-height: calc(100vh - 74px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+  .ss-search-block {
+    min-height: 400px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 35px;
+    margin: 55px;
+    max-width: 750px;
+    box-shadow: 0px 0px 20px 1px #e2e2e2;
+    .ss-instructions {
+      h2 {
+        text-align: center;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+      }
+    }
+    .ss-input {
+      display: flex;
+      justify-content: center;
+      padding: 25px 0 35px 0;
+      input {
+        font-size: 20px;
+        margin-right: 25px;
+        border: 1px solid #ccc;
+        border-radius: 50px;
+        padding: 10px;
+        width: 100%;
+        box-shadow: 2px 2px 5px 0px #ececec;
+        &:focus {
+          outline: none;
+        }
+      }
+      button {
+        background: #1f7fec;
+        border: 0;
+        border-radius: 50px;
+        color: #fff;
+        font-size: 20px;
+        padding: 15px 20px;
+        cursor: pointer;
+        text-transform: uppercase;
+        box-shadow: 2px 2px 5px 0px #b9b9b9;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .ss-output {
+      .ss-error {
+        color: red;
+      }
+      .ss-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        span {
+          padding: 10px;
+          &.ss-grid-item {
+            border-bottom: 2px solid #ccc;
+          }
+          &.ss-grid-title {
+            background: #1e7fec;
+            color: #fff;
+            font-weight: bold;
+          }
+          &:nth-last-of-type(-n+2) {
+            border-bottom: 0px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
